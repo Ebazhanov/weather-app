@@ -1,16 +1,17 @@
-import cloudIcon from "../../assets/cloud.jpg";
+import "./Header.css";
+import icon from "../../img/02d.png";
 
 export const Header = () => {
   return (
     <>
-      <h2 className="card__title">City</h2>
-      <time className="card_date" dateTime="2022-10-02">
+      <h2 className="title">City</h2>
+      <time className="date" dateTime="2022-10-02">
         02 Oct 20022
       </time>
-      <div className="card__icon">
-        <img src={cloudIcon} alt="Clouds" />
-        <div className="card__degree">C</div>
-        <div className="card__weather">Clouds</div>
+      <div className="icon">
+        <img src={icon} alt="name" />
+        <div className="degree">C</div>
+        <div className="weather">Clouds</div>
       </div>
     </>
   );

@@ -1,0 +1,66 @@
+.toggle {
+    display: flex;
+}
+
+.toggle__radio {
+    display: none;
+}
+
+.toggle__label {
+    padding: 8px;
+    width: 50%;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle__label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+}
+
+.toggle__radio:checked + .toggle__label {
+    margin-top: -4px;
+    font-size: 18px;
+}
+
+.toggle__radio:checked + .toggle__label::after {
+    background-color: #ffffff;
+}
+
+.details__group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.details__group dt {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.details__group dd {
+    margin: 0;
+    padding: 0;
+}
+
+.card__toggle {
+    align-self: end;
+    margin-bottom: -16px;
+}
+
+.card__details {
+    margin: 0;
+    padding: 0;
+}

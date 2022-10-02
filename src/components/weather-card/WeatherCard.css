@@ -1,0 +1,27 @@
+.card {
+    min-height: 400px;
+    min-width: 600px;
+    background-color: #090435;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.left-col {
+    padding: 24px;
+    background-image: linear-gradient(
+            to bottom right,
+            rgba(9, 4, 53, 0.8),
+            rgba(9, 4, 53, 0.2)
+    ),
+    url("../../img/weather-cover.jpg");
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    transform: scale(1.05);
+}
+
+.right-col {
+    display: grid;
+    padding: 40px;
+}

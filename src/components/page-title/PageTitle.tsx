@@ -1,3 +1,5 @@
+import "./PageTitle.css";
+
 type Title = {
   title: string;
 };
