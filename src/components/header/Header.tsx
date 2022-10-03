@@ -6,11 +6,11 @@ export const Header = () => {
     <>
       <h2 className="title">City</h2>
       <time className="date" dateTime="2022-10-02">
-        02 Oct 20022
+        03 Oct 20022
       </time>
       <div className="icon">
-        <img src={icon} alt="name" />
-        <div className="degree">C</div>
+        <img src={icon} alt="Clouds" />
+        <div className="degree">13 *C</div>
         <div className="weather">Clouds</div>
       </div>
     </>

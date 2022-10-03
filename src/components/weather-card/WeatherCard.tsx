@@ -1,6 +1,6 @@
 import { Header } from "../header/Header";
-import { Detail } from "../details/Details";
 import "./WeatherCard.css";
+import Detail from "../details/Details";
 
 export const WeatherCard = () => {
   return (
