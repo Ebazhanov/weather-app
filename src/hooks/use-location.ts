@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCurrentPosition } from "../utils/Utils";
+import { getCurrentPosition } from "../utils/utils";
 
 export const useLocation = () => {
   const [coordinates, setCoordinates] = useState<any>([]);
