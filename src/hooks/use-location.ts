@@ -5,11 +5,12 @@ export const useLocation = () => {
   const [coordinates, setCoordinates] = useState<any>([]);
 
   useEffect(() => {
-    (async () => {
+    const getCoordinates = async () => {
       const { coords } = <any>await getCurrentPosition();
       setCoordinates([coords.latitude, coords.longitude]);
-    })();
-  });
+    };
+    getCoordinates();
+  }, []);
 
   return [...coordinates];
 };
