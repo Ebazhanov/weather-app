@@ -1,6 +1,11 @@
 import "./Details.css";
 
-export default function Detail() {
+type Props = {
+  onChangeDay: ({ target }: { target: any }) => void;
+  weatherDay: string;
+};
+
+export default function Detail({ onChangeDay, weatherDay }: Props) {
   return (
     <>
       <dl className="card__details details">
@@ -28,15 +33,24 @@ export default function Detail() {
         </div>
       </dl>
       <div className="card__toggle toggle">
-        <input className="toggle__radio" type="radio" name="day" id="today" />
+        <input
+          onChange={onChangeDay}
+          className="toggle__radio"
+          type="radio"
+          name="day"
+          id="today"
+          checked={weatherDay === "today"}
+        />
         <label className="toggle__label" htmlFor="today">
           Today
         </label>
         <input
+          onChange={onChangeDay}
           className="toggle__radio"
           type="radio"
           name="day"
           id="tomorrow"
+          checked={weatherDay === "tomorrow"}
         />
         <label className="toggle__label" htmlFor="tomorrow">
           Tomorrow

@@ -19,7 +19,7 @@ function App() {
         return;
       }
       const url = getUrl(API_END_POINT, latitude, longitude, API_KEY);
-      console.log(url);
+      //console.log(url);
 
       const response = await fetch(url);
       const rawData = await response.json();
