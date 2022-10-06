@@ -11,29 +11,30 @@ function App() {
   const [latitude, longitude] = useLocation();
   const [weatherData, setWeatherData] = useState({});
 
-  //console.log(latitude, longitude);
-
   useEffect(() => {
-    const fetchData = async () => {
-      if (!latitude || !longitude) {
-        return;
-      }
-      const url = getUrl(API_END_POINT, latitude, longitude, API_KEY);
-      //console.log(url);
-
-      const response = await fetch(url);
-      const rawData = await response.json();
-      //console.log(rawData);
-      setWeatherData(transformWeather(rawData));
-      console.log(weatherData);
-    };
-    fetchData();
+    const url = getUrl(API_END_POINT, latitude, longitude, API_KEY);
+    if (!latitude || !longitude) {
+      return;
+    }
+    fetch(url)
+      .then((res) => res.json())
+      .then((rawData) => {
+        setWeatherData(transformWeather(rawData));
+      })
+      .catch(() => {
+        alert("Error: geolocation API is not valid");
+        throw new Error("Error: geolocation API is not valid");
+      });
   }, [latitude, longitude]);
 
   return (
     <div className="container">
       <PageTitle title="Weather App" />
-      {!weatherData ? <Loader /> : <WeatherCard data={weatherData} />}
+      {Object.keys(weatherData).length === 0 ? (
+        <Loader />
+      ) : (
+        <WeatherCard data={weatherData} />
+      )}
     </div>
   );
 }

@@ -33,15 +33,15 @@ const getVisibility = (meterCount: number) => {
 };
 
 const getWeatherData = (rawData: any) => {
-  const { visibility, main, weather, wind, dl_txt } = rawData;
+  const { visibility, main, weather, wind, dt_txt } = rawData;
   const { humidity, temp } = main;
 
   return {
-    date: dayjs(dl_txt).toDate(),
+    date: dayjs(dt_txt).toDate(),
     visibility: `${getVisibility(visibility)}/km`,
     humidity: `${humidity}%`,
-    wind: `${Math.ceil(wind.speed)}m/sec`,
-    temp: `${Math.ceil(temp)}m/sec`,
+    wind: `${Math.ceil(wind.speed)} m/sec`,
+    temp: `${Math.ceil(temp)}°C`,
     icon: weather.at(0).icon,
     description: weather.at(0).description,
     shortDescription: weather.at(0).main,

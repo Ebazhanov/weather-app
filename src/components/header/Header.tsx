@@ -1,24 +1,27 @@
 import "./Header.css";
-import icon from "../../img/02d.png";
+import dayjs from "dayjs";
+
+const FORMAT_DATE_STRING = "DD MMM YYYY";
 
 export const Header = ({
   city,
   date,
   temp,
+  icon,
   description,
   shortDescription,
 }: any) => {
   return (
     <>
       <h2 className="title">{city}</h2>
-      <time className="date" dateTime="2022-10-02">
-        Zhenja
+      <time className="date" dateTime={dayjs(date).toISOString()}>
+        {dayjs(date).format(FORMAT_DATE_STRING)}
       </time>
       <div className="icon">
-        <img src={icon} alt="Clouds" />
-        <div className="degree">13 *C</div>
-        <div className="weather">Clouds</div>
+        <img src={require(`../../img/${icon}.png`)} alt={shortDescription} />
       </div>
+      <div className="degree">{temp}</div>
+      <div className="weather">{description}</div>
     </>
   );
 };

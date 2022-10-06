@@ -6,7 +6,7 @@ import { useState } from "react";
 export const WeatherCard = ({ data }: any) => {
   const [currentDay, setCurrentDay] = useState("today");
 
-  const { city, sunrise, sunset, today } = data;
+  const { city, sunrise, sunset, today, temp } = data;
   const todayWeather = data[currentDay];
 
   return (
@@ -14,12 +14,11 @@ export const WeatherCard = ({ data }: any) => {
       <div className="left-col">
         <Header
           city={city}
-          /*
           date={todayWeather.date}
           temp={todayWeather.temp}
           icon={todayWeather.icon}
           description={todayWeather.description}
-          shortDescription={todayWeather.shortDescription}*/
+          shortDescription={todayWeather.shortDescription}
         />
       </div>
       <div className="right-col">
