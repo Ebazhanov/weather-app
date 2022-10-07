@@ -1,6 +1,6 @@
-h1 {
-  height: 50vh;
-  width: 50vh;
+.loader {
+  height: 40vh;
+  width: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;

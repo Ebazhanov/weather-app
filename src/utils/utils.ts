@@ -17,7 +17,7 @@ export const getCurrentPosition = () => {
   return new Promise((resolve, reject) =>
     window.navigator.geolocation.getCurrentPosition(resolve, reject)
   ).catch(() => {
-    alert("User denied Geolocation");
+    alert("Please give your browser access to Geolocation to see the Weather");
   });
 };
 
