@@ -22,7 +22,6 @@ function App() {
         setWeatherData(transformWeather(rawData));
       })
       .catch(() => {
-        alert("Error: geolocation API is not valid");
         throw new Error("Error: geolocation API is not valid");
       });
   }, [latitude, longitude]);

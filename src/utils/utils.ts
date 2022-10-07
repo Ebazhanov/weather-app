@@ -1,16 +1,9 @@
 import dayjs from "dayjs";
 
-interface Props {
-  latitude: any;
-  longitude: any;
-  endpoint: string | undefined;
-  apiKey: string | undefined;
-}
-
 export const getUrl = (
   endpoint: string | undefined,
-  latitude: any,
-  longitude: any,
+  latitude: number,
+  longitude: number,
   apiKey: string | undefined
 ) => {
   return `${endpoint}forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}&cnt=9`;

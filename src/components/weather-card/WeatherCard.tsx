@@ -6,8 +6,15 @@ import { useState } from "react";
 export const WeatherCard = ({ data }: any) => {
   const [currentDay, setCurrentDay] = useState("today");
 
-  const { city, sunrise, sunset, today, temp } = data;
+  const { city, sunrise, sunset } = data;
   const todayWeather = data[currentDay];
+  const weatherDetail = {
+    humidity: todayWeather.humidity,
+    wind: todayWeather.wind,
+    visibility: todayWeather.visibility,
+    sunrise,
+    sunset,
+  };
 
   return (
     <article className="card">
@@ -27,6 +34,7 @@ export const WeatherCard = ({ data }: any) => {
             setCurrentDay(target.id)
           }
           weatherDay={currentDay}
+          weather={weatherDetail}
         />
       </div>
     </article>
