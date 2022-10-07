@@ -1,4 +1,4 @@
-## App will take your geolocation and show you weather for today and tomorrow
+# Weather based on your Geolocation
 
 
 ![gif](weather_app.gif)

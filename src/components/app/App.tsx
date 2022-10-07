@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { PageTitle } from "../page-title/PageTitle";
 import { WeatherCard } from "../weather-card/WeatherCard";
 import { useLocation } from "../../hooks/use-location";
 import { getUrl, transformWeather } from "../../utils/utils";
@@ -28,7 +27,6 @@ function App() {
 
   return (
     <div className="container">
-      <PageTitle title="Weather App" />
       {Object.keys(weatherData).length === 0 ? (
         <Loader />
       ) : (
