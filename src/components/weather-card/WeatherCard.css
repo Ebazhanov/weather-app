@@ -15,7 +15,7 @@
             rgba(9, 4, 53, 0.8),
             rgba(9, 4, 53, 0.2)
     ),
-    url("../../img/weather-cover.jpg");
+    url("../../assets/img/weather-cover.jpg");
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 24px;
     transform: scale(1.05);

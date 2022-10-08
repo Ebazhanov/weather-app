@@ -9,7 +9,7 @@ export const getUrl = (
   return `${endpoint}forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}&cnt=9`;
 };
 
-export const getCurrentPosition = () => {
+export const getCurrentPosition: any = () => {
   if (!window.navigator || !window.navigator.geolocation) {
     alert("Error: geolocation API is not valid");
     throw new Error("Error: geolocation API is not valid");

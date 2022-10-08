@@ -16,23 +16,18 @@ export const WeatherCard = ({ data }: any) => {
     sunset,
   };
 
+  const handleClickOnChangeDay = ({ target }: { target: any }) => {
+    setCurrentDay(target.id);
+  };
+
   return (
     <article className="card">
       <div className="left-col">
-        <Header
-          city={city}
-          date={todayWeather.date}
-          temp={todayWeather.temp}
-          icon={todayWeather.icon}
-          description={todayWeather.description}
-          shortDescription={todayWeather.shortDescription}
-        />
+        <Header city={city} {...todayWeather} />
       </div>
       <div className="right-col">
         <Detail
-          onChangeDay={({ target }: { target: any }) =>
-            setCurrentDay(target.id)
-          }
+          onChangeDay={handleClickOnChangeDay}
           weatherDay={currentDay}
           weather={weatherDetail}
         />

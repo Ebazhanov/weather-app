@@ -11,6 +11,7 @@ export const Header = ({
   description,
   shortDescription,
 }: any) => {
+  const currentWeatherIcon = require(`../../assets/img/${icon}.png`);
   return (
     <>
       <h2 className="title">{city}</h2>
@@ -18,7 +19,7 @@ export const Header = ({
         {dayjs(date).format(FORMAT_DATE_STRING)}
       </time>
       <div className="icon">
-        <img src={require(`../../img/${icon}.png`)} alt={shortDescription} />
+        <img src={currentWeatherIcon} alt={shortDescription} />
       </div>
       <div className="degree">{temp}</div>
       <div className="weather">{description}</div>
